@@ -2,6 +2,8 @@
 [![Coverage Status](https://coveralls.io/repos/github/onechronos/symbologyl2-py/badge.svg)](https://coveralls.io/github/onechronos/symbologyl2-py)
 [![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit)](https://github.com/pre-commit/pre-commit)
 
+
+[![PyPI](https://img.shields.io/pypi/v/symbologyl2)](https://pypi.org/project/symbologyl2/)
 [![PyPI - Python Version](https://img.shields.io/pypi/pyversions/symbologyl2)](https://pypi.org/project/symbologyl2/)
 [![PyPI - Format](https://img.shields.io/pypi/format/symbologyl2)](https://pypi.org/project/symbologyl2/)
 [![PyPI - License](https://img.shields.io/pypi/l/symbologyl2)](https://pypi.org/project/symbologyl2/)
