@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "pyhoc"
-version = "0.1.0"
+version = "0.1.1"
 description = "A python wrapper for symbologyl2 (https://github.com/onechronos/symbologyl2)"
 authors = ["OneChronos Engineering <engineering@onechronos.com>"]
 license = "MIT"
