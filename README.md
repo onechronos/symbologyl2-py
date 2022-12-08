@@ -29,3 +29,26 @@ library is a thin wrapper over the [symbologyl2](https://github.com/onechronos/s
 poetry shell
 maturin develop
 ```
+
+### Version Bumps
+
+Given how [maturin](https://pyo3.rs/v0.17.3/index.html) operates, it's necessary to bump release versions in both
+`pyproject.toml` and `Cargo.toml`.  Given how [poetry](https://python-poetry.org/) operates, it's necessary to duplicate
+metadata between `[tool.poetry]` and `[project]`. Make sure that all of the following get set:
+
+```
+pyproject.toml
+
+[tool.poetry]
+version = "x.y.z"
+
+[project]
+version = "x.y.z"
+```
+
+```
+Cargo.toml
+
+[package]
+version = "x.y.z"
+```

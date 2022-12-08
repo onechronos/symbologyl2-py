@@ -1,12 +1,13 @@
 [tool.poetry]
 name = "pyhoc"
-version = "0.1.1"
+version = "0.1.2"
 description = "A python wrapper for symbologyl2 (https://github.com/onechronos/symbologyl2)"
 authors = ["OneChronos Engineering <engineering@onechronos.com>"]
 license = "MIT"
 readme = "README.md"
 repository = "https://github.com/onechronos/symbologyl2-py"
 homepage = "https://github.com/onechronos/symbologyl2-py"
+documentation = "https://symbologyl2-py.readthedocs.io/en/latest/index.html"
 
 [tool.poetry.dependencies]
 python = ">=3.8.1,<4.0"
@@ -35,7 +36,17 @@ requires = ["poetry-core>=1.0.0", "maturin>=0.14,<0.15"]
 build-backend = "maturin"
 
 [project]
+authors = [
+    { name = "OneChronos Engineering", email = "engineering@onechronos.com" },
+]
 name = "symbologyl2"
+url = "https://github.com/onechronos/symbologyl2-py"
+version = "0.1.2"
+description = "A python wrapper for symbologyl2 (https://github.com/onechronos/symbologyl2)"
+license = { text = "MIT"}
+readme = "README.md"
+repository = "https://github.com/onechronos/symbologyl2-py"
+homepage = "https://github.com/onechronos/symbologyl2-py"
 requires-python = ">=3.8.1,<4.0"
 classifiers = [
     "License :: OSI Approved :: MIT License",
@@ -45,4 +56,10 @@ classifiers = [
     "Programming Language :: Python :: 3.9",
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: Implementation :: CPython",
+    "Operating System :: OS Independent"
 ]
+
+[project.urls]
+Homepage = "https://github.com/onechronos/symbologyl2-py"
+Documentation = "https://symbologyl2-py.readthedocs.io/en/latest/index.html"
+Source = "https://github.com/onechronos/symbologyl2-py"
