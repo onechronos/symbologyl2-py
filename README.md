@@ -5,7 +5,7 @@
 [![PyPI - Python Version](https://img.shields.io/pypi/pyversions/symbologyl2)](https://pypi.org/project/symbologyl2/)
 [![PyPI - Format](https://img.shields.io/pypi/format/symbologyl2)](https://pypi.org/project/symbologyl2/)
 [![PyPI - License](https://img.shields.io/pypi/l/symbologyl2)](https://pypi.org/project/symbologyl2/)
-[![Documentation Status](https://readthedocs.org/projects/symbologyl2/badge/?version=latest)](https://symbologyl2.readthedocs.io/en/latest/?badge=latest)
+[![Documentation Status](https://readthedocs.org/projects/symbologyl2-py/badge/?version=latest)](https://symbologyl2-py.readthedocs.io/en/latest/?badge=latest)
 
 # Symbology Normalization (symbologyl2-py)
 
