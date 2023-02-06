@@ -316,7 +316,7 @@ dependencies = [
 
 [[package]]
 name = "symbologyl2-py"
-version = "0.1.3"
+version = "0.1.4"
 dependencies = [
  "pyo3",
  "symbologyl2",
