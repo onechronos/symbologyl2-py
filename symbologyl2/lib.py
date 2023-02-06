@@ -140,7 +140,7 @@ def from_any_to_nasdaq_integrated(symbol: str) -> str:
     str
         The original symbol in Nasdaq integrated format
     """
-    return _symbologyl2.from_any_to_cqs(symbol)
+    return _symbologyl2.from_any_to_nasdaq_integrated(symbol)
 
 
 def from_any_to_cms_suffix(symbol: str) -> Optional[str]:
