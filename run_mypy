@@ -3,5 +3,5 @@
 set -o errexit
 cd "$(dirname "$0")"
 
-poetry run maturin build
-poetry run mypy --namespace-packages --package symbologyl2
+uv run --active maturin build
+uv run --active mypy --namespace-packages --package symbologyl2

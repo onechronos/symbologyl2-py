@@ -74,7 +74,7 @@ get_suffix!(from_any_to_cqs_suffix, cqs_suffix);
 get_suffix!(from_any_to_nasdaq_suffix, nasdaq_integrated_suffix);
 
 #[pymodule]
-fn _symbologyl2(_py: Python, m: &PyModule) -> PyResult<()> {
+fn _native(m: &Bound<'_, PyModule>) -> PyResult<()> {
     m.add_function(wrap_pyfunction!(from_any_to_root, m)?)?;
     m.add_function(wrap_pyfunction!(from_any_to_cms, m)?)?;
     m.add_function(wrap_pyfunction!(from_any_to_cqs, m)?)?;

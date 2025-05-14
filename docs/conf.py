@@ -6,9 +6,9 @@ import sys
 sys.path.insert(0, os.path.abspath("../symbologyl2"))
 
 project = "symbologyl2"
-copyright = "2022, OneChronos Engineering"
+copyright = "2025, OneChronos Engineering"
 author = "OneChronos Engineering"
-release = "0.1.0"
+release = "0.1.5"
 
 extensions = [
     "sphinx.ext.autodoc",
@@ -27,4 +27,3 @@ exclude_patterns = ["_build", "Thumbs.db", ".DS_Store"]
 
 master_doc = "index"
 html_theme = "sphinx_rtd_theme"
-html_static_path = ["_static"]
