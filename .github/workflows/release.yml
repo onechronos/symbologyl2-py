@@ -4,6 +4,7 @@ on:
   push:
     tags:
       - "*.*.*"
+  workflow_dispatch:
 
 jobs:
   pre_commit:
@@ -13,46 +14,58 @@ jobs:
     runs-on: ubuntu-latest
     needs: [pre_commit]
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
       - uses: PyO3/maturin-action@v1
         with:
           manylinux: auto
           command: build
-          args: --release --sdist -o dist --find-interpreter
+          args: --release --sdist -o dist
       - name: Upload wheels
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
-          name: wheels
+          name: wheels-linux
           path: dist
 
   windows:
     runs-on: windows-latest
     needs: [pre_commit]
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
       - uses: PyO3/maturin-action@v1
         with:
           command: build
-          args: --release -o dist --find-interpreter
+          args: --release -o dist
       - name: Upload wheels
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
-          name: wheels
+          name: wheels-windows
           path: dist
 
   macos:
     runs-on: macos-latest
     needs: [pre_commit]
     steps:
-      - uses: actions/checkout@v3
-      - uses: PyO3/maturin-action@v1
+      - uses: actions/checkout@v4
         with:
-          command: build
-          args: --release -o dist --universal2 --find-interpreter
+          persist-credentials: false
+      - name: Build wheels - x86_64
+        uses: PyO3/maturin-action@v1
+        with:
+          target: x86_64
+          args: --release -o dist --sdist
+      - name: Build wheels - universal2
+        uses: PyO3/maturin-action@v1
+        with:
+          target: universal2-apple-darwin
+          args: --release -o dist
       - name: Upload wheels
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
-          name: wheels
+          name: wheels-macos
           path: dist
 
   release:
@@ -61,9 +74,11 @@ jobs:
     if: "startsWith(github.ref, 'refs/tags/')"
     needs: [macos, windows, linux]
     steps:
-      - uses: actions/download-artifact@v3
+      - uses: actions/download-artifact@v4
         with:
-          name: wheels
+          path: dist
+          pattern: wheels-*
+          merge-multiple: true
 
       - name: Publish to PyPI
         uses: PyO3/maturin-action@v1
@@ -71,9 +86,7 @@ jobs:
           MATURIN_PYPI_TOKEN: ${{ secrets.PYPI_API_TOKEN }}
         with:
           command: upload
-          args: --skip-existing *
+          args: --skip-existing dist/*
 
       - name: Github release
-        uses: softprops/action-gh-release@v1
-        with:
-          files: ${{ github.workspace }}/target/wheels/*
+        uses: softprops/action-gh-release@v2

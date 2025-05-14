@@ -4,7 +4,7 @@ Wrapper lib for `symbologyl2 <https://github.com/onechronos/symbologyl2>`_
 
 from typing import Optional
 
-from symbologyl2 import _symbologyl2
+from symbologyl2 import _native
 
 
 def from_any_to_root(symbol: str) -> str:
@@ -35,7 +35,7 @@ def from_any_to_root(symbol: str) -> str:
     str
         The symbol root
     """
-    return _symbologyl2.from_any_to_root(symbol)
+    return _native.from_any_to_root(symbol)
 
 
 def from_any_to_cms(symbol: str) -> str:
@@ -70,7 +70,7 @@ def from_any_to_cms(symbol: str) -> str:
     str
         The original symbol in CMS format
     """
-    return _symbologyl2.from_any_to_cms(symbol)
+    return _native.from_any_to_cms(symbol)
 
 
 def from_any_to_cqs(symbol: str) -> str:
@@ -105,7 +105,7 @@ def from_any_to_cqs(symbol: str) -> str:
     str
         The original symbol in CQS format
     """
-    return _symbologyl2.from_any_to_cqs(symbol)
+    return _native.from_any_to_cqs(symbol)
 
 
 def from_any_to_nasdaq_integrated(symbol: str) -> str:
@@ -140,7 +140,7 @@ def from_any_to_nasdaq_integrated(symbol: str) -> str:
     str
         The original symbol in Nasdaq integrated format
     """
-    return _symbologyl2.from_any_to_nasdaq_integrated(symbol)
+    return _native.from_any_to_nasdaq_integrated(symbol)
 
 
 def from_any_to_cms_suffix(symbol: str) -> Optional[str]:
@@ -174,7 +174,7 @@ def from_any_to_cms_suffix(symbol: str) -> Optional[str]:
     suffix : str or None
         The suffix in CMS format, or None if there is no suffix.
     """
-    return _symbologyl2.from_any_to_cms_suffix(symbol)
+    return _native.from_any_to_cms_suffix(symbol)
 
 
 def from_any_to_cqs_suffix(symbol: str) -> Optional[str]:
@@ -208,7 +208,7 @@ def from_any_to_cqs_suffix(symbol: str) -> Optional[str]:
     suffix : str or None
         The suffix in CQS format, or None if there is no suffix.
     """
-    return _symbologyl2.from_any_to_cqs_suffix(symbol)
+    return _native.from_any_to_cqs_suffix(symbol)
 
 
 def from_any_to_nasdaq_suffix(symbol: str) -> Optional[str]:
@@ -243,4 +243,4 @@ def from_any_to_nasdaq_suffix(symbol: str) -> Optional[str]:
     suffix : str or None
         The suffix in Nasdaq integrated format, or None if there is no suffix.
     """
-    return _symbologyl2.from_any_to_nasdaq_suffix(symbol)
+    return _native.from_any_to_nasdaq_suffix(symbol)
